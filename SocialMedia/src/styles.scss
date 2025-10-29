@@ -1,2 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+// Custom variables for light mode
+:root[data-bs-theme="light"] {
+  --bs-primary: #2376DC; // Blue as primary
+  --bs-secondary: #DC8923; // Orange as secondary/accent
+  --bs-body-bg: #f0f2f5;
+  --bs-body-color: #333;
+  --header-bg: #2376DC; // Using primary blue for header
+  --header-color: white;
+  --link-color: white;
+  --link-hover: underline;
+  --search-bg: white;
+  --search-color: #333;
+  --accent-bg: #DC8923; // Orange for accents like buttons or highlights
+  --accent-color: white;
+  --border-color: #ddd;
+  --text-muted: #666;
+}
+
+// Custom variables for dark mode
+:root[data-bs-theme="dark"] {
+  --bs-primary: #2376DC; // Keep primary blue, or lighten/darken as needed
+  --bs-secondary: #DC8923; // Keep secondary orange
+  --bs-body-bg: #18191a;
+  --bs-body-color: #e4e6eb;
+  --header-bg: #1a5ab0; // Darkened version of #2376DC for better contrast in dark mode
+  --header-color: #e4e6eb;
+  --link-color: #e4e6eb;
+  --link-hover: underline;
+  --search-bg: #3a3b3c;
+  --search-color: #e4e6eb;
+  --accent-bg: #b06e1c; // Darkened version of #DC8923 for dark mode
+  --accent-color: #e4e6eb;
+  --border-color: #444;
+  --text-muted: #b0b3b8;
+}
+
+// Apply custom styles
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
