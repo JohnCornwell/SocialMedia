@@ -1,1 +1,57 @@
-<p>home-component works!</p>
+<div class="feed">
+    <div class="post">
+        <div class="post-header">
+            <img class="profile-pic" src="https://via.placeholder.com/40" alt="Profile Pic">
+            <div class="user-info">User1</div>
+        </div>
+        <img class="post-image" src="https://via.placeholder.com/600x400?text=Image+1" alt="Post Image">
+        <div class="post-caption">This is a beautiful sunset!</div>
+        <div class="post-actions">
+            <button>Like</button>
+            <button>Comment</button>
+            <button>Share</button>
+        </div>
+    </div>
+    <div class="post">
+        <div class="post-header">
+            <img class="profile-pic" src="https://via.placeholder.com/40" alt="Profile Pic">
+            <div class="user-info">User2</div>
+        </div>
+        <img class="post-image" src="https://via.placeholder.com/600x400?text=Image+2" alt="Post Image">
+        <div class="post-caption">Enjoying a day at the beach.</div>
+        <div class="post-actions">
+            <button>Like</button>
+            <button>Comment</button>
+            <button>Share</button>
+        </div>
+    </div>
+    <div class="post">
+        <div class="post-header">
+            <img class="profile-pic" src="https://via.placeholder.com/40" alt="Profile Pic">
+            <div class="user-info">User3</div>
+        </div>
+        <img class="post-image" src="https://via.placeholder.com/600x400?text=Image+3" alt="Post Image">
+        <div class="post-caption">City lights at night.</div>
+        <div class="post-actions">
+            <button>Like</button>
+            <button>Comment</button>
+            <button>Share</button>
+        </div>
+    </div>
+    @for(post of posts; track post) {
+        <div class="post">
+            <div class="post-header">
+                <img class="profile-pic" src={{post.user.profile_image}} alt="Profile Pic">
+                <div class="user-info">{{post.user.username}}</div>
+            </div>
+            <img class="post-image" src={{post.image_path}} alt="Post Image">
+            <div class="post-caption">{{post.caption}}</div>
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+        </div>
+    } @empty {
+        <p>Your feed is currently empty.</p>
+    }
+</div>
