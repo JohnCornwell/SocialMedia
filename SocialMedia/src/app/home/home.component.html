@@ -38,13 +38,13 @@
             <button>Share</button>
         </div>
     </div>
-    @for(post of posts; track post) {
+    @for(post of posts; track post.id) {
         <div class="post">
             <div class="post-header">
-                <img class="profile-pic" src={{post.user.profile_image}} alt="Profile Pic">
+                <img class="profile-pic" src={{post.user.image_path}} alt="Profile Pic">
                 <div class="user-info">{{post.user.username}}</div>
             </div>
-            <img class="post-image" src={{post.image_path}} alt="Post Image">
+            <img class="post-image" src={{post.path}} alt="Post Image">
             <div class="post-caption">{{post.caption}}</div>
             <div class="post-actions">
                 <button>Like</button>

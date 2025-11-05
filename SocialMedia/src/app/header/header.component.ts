@@ -1,4 +1,5 @@
 import { Component, Renderer2, RendererFactory2 } from '@angular/core';
+import { UserService } from '../../Services/user-service.service';
 
 @Component({
   selector: 'header-component',
@@ -12,7 +13,7 @@ export class HeaderComponent {
   private renderer: Renderer2;
   private currentTheme: string = 'light';
 
-  constructor(rendererFactory: RendererFactory2) {
+  constructor(rendererFactory: RendererFactory2, public userService: UserService) {
     this.renderer = rendererFactory.createRenderer(null, null);
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
